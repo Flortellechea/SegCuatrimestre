@@ -1,17 +1,17 @@
-import { Vehiculo } from './vehiculo';
+import { Vehiculo} from './vehiculo';
 
 export class RegistroAutomotor {
    vehiculos: Vehiculo[];
 
    constructor() {
       this.vehiculos = [];
-    }
+   }
 
-    getVehiculos(): Vehiculo[] {
+   getVehiculos(): Vehiculo[] {
       return this.vehiculos;
    }
 
-   agregarVehiculo(vehiculo: Vehiculo):void {
+   agregarVehiculo(vehiculo: Vehiculo): void {
       let indiceArreglo = -1;
       for (let index = 0; index < this.vehiculos.length; index++) {
          const existente = this.vehiculos[index];
@@ -19,7 +19,7 @@ export class RegistroAutomotor {
             indiceArreglo = index;
          }         
       }
-      //no puedo agregar un vehiculo que ya existe
+      // no puedo agregar un vehiculo que ya existe
       if (indiceArreglo == -1) {
          this.vehiculos.push(vehiculo);
       } else {
@@ -27,7 +27,7 @@ export class RegistroAutomotor {
       }
    }
 
-   modificarVehiculo(vehiculo: Vehiculo):void {
+   modificarVehiculo(vehiculo: Vehiculo): void {
       let indiceArreglo = -1;
       for (let index = 0; index < this.vehiculos.length; index++) {
          const existente = this.vehiculos[index];
@@ -35,7 +35,7 @@ export class RegistroAutomotor {
             indiceArreglo = index;
          }         
       }
-      //no puedo modificar un vehiculo que no existe
+      // no puedo modificar un vehiculo que no existe
       if (indiceArreglo >= 0) {
          this.vehiculos[indiceArreglo] = vehiculo;
       } else {
@@ -43,7 +43,7 @@ export class RegistroAutomotor {
       }
    }
 
-   eliminarVehiculo(vehiculo: Vehiculo):void {
+   eliminarVehiculo(vehiculo: Vehiculo): void {
       let indiceArreglo = -1;
       for (let index = 0; index < this.vehiculos.length; index++) {
          const existente = this.vehiculos[index];
@@ -51,7 +51,7 @@ export class RegistroAutomotor {
             indiceArreglo = index;
          }         
       }
-      //no puedo eliminar  un vehiculo que no existe
+      // no puedo eliminar un vehiculo que no existe
       if (indiceArreglo >= 0) {
          this.vehiculos.splice(indiceArreglo, 1);
       } else {
